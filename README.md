@@ -1,5 +1,5 @@
 # PracticeGit
 Learn CLI Git
 
-wellcome git
+Change file
 Hi master!
