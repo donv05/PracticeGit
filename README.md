@@ -1,5 +1,6 @@
 # PracticeGit
 Learn CLI Git
 
-develop
+Change file 1
 Hi master!
+Other branch
