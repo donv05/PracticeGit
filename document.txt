@@ -1,0 +1,46 @@
+
+GITHUB
+
+I. The Repository
+    - Collection of File managed by git
+    - History(all of it)
+    - Working Directory / workspace
+    - Quasi-hidden .git Folder
+    - Focus Purpose of Repository
+
+
+
+II. Local Git States
+    - structure: Local (contain 3 status: Working directory, Staging area, Repository) = Working Directory(file.txt, the working Directory contains al the files and folders for your application) -> Staging Area(file.txt, The Staging area is used to prepare for the next commit, files are moved from the modified working directory state to the git staging area) -> Repository(.git Folder, commit all to repository -> only local) => Remote
+
+
+
+III. Git basic
+    - git show -> show all change the files.
+    - git status -> show modified files.
+    - git-ls-files - Show information about files in the index and the working tree
+    - When you want reset commit: git reset --hard(option: delete commit) HEAD~1
+    - When you want to reset the file to default: step1: git reset HEAD your directive file, step 2: git checkout -- your directive file.
+
+    - History and making new commands with alias: git --graph or git --oneline --graph --decorate --all; new commands with alias: git config --global alias.hist "log --oneline --graph --decorate --all"
+
+    - Rename File: before they must commit then : git mv oldname.txt newname.txt -> after renaming file is success (staged) this is must recommit to reponsitory.
+    - Remove File: git rm filename.txt -> when they deleted, recommit file was deletion.
+
+    -Excluding(not including) Unwanted Files: use .gitignore
+    - git show all of the file commit: git show --pretty="" --name-only bd61ad98
+
+    Advanced: Beyond the basics.
+    - Special Markers:
+    1. Like "pointers"
+    2. HEAD(HEAD is normally the last commit of the current branch): Points to last commit of current Branch. can be moved(advanced) that means that, as we switch branches, the location of HEAD moves to match the last commit location of that branch.
+    - Making Special Events with Tagging: tag information people use this functionality to mark release points(v1.0 , v2.0 and so on)/.
+    sample commit: d0a0627 (HEAD -> feature/ui, tag: v1.0) rename file
+    syntax: git tag -a v1.4 -m "my version 1.4"
+    - Saving work in Progress with Stashing: "git stash" ---> it tell me that the HEAD was saved which is the last commit on the current branch, which is master and saved it in a work in progress.
+    ---> Let's apply our stash: do a "git stash pop" , so that'll two action at once. one is an 'Apply' and then the next is a "drop".
+
+    - Time travel with Reset and Reflog: git reset id --soft(the soft reset's least destructive of them all, you must commit change staged from top to the current changs and don't ADD changed files) -- hard(the hard reset's get HEAD of commit you want reset, all change of files will remove . you dont recommit changed) --mixed(the mixed reset's back to the current commit and all change files is Unstage, you must add and commit all changed file)
+    ---> git log only show all the commit id, git reflog show all the different actions we've taken while in this repository.
+
+
